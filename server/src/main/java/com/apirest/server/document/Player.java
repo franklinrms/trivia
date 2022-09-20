@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Player {
-   
+
     @Id
     private String id;
     private String name;
