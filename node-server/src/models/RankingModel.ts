@@ -9,7 +9,10 @@ const playersMongooseSchema = new Schema<IPlayer>({
 }, { versionKey: false });
 
 export default class RankingModel extends MongoModel<IPlayer> {
-  constructor(model = mongooseCreateModel('ranking', playersMongooseSchema)) {
+  constructor(model = mongooseCreateModel(
+    'player_ranking',
+    playersMongooseSchema,
+  )) {
     super(model);
   }
 }
