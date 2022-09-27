@@ -6,7 +6,7 @@ const Container = styled.header`
     align-items: center;
     justify-content: space-around;
     height: 100px;
-    background-color: ${theme.colors.brand};
+    background-color: ${theme.colors.surface_primary_hover};
     background-image: url(${({ bg }) => bg});
     font-size: 24px;
 
