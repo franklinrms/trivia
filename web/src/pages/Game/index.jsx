@@ -11,7 +11,7 @@ import NextButton from './style';
 
 export default function Game() {
   const [indexQuestion, setIndexQuestion] = useState(0);
-  const [hasClick, setHasClick] = useState(true);
+  const [hasClick, setHasClick] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -41,7 +41,13 @@ export default function Game() {
             category={currentQuestion?.category}
             question={currentQuestion?.question}
           />
-          <Alternatives {...currentQuestion} isDisabled={hasClick} />
+
+          <Alternatives
+            {...currentQuestion}
+            isDisabled={hasClick}
+            selected={() => setHasClick(true)}
+          />
+
           {hasClick ? (
 
             <NextButton type="button" onClick={nextQuestion}>next</NextButton>

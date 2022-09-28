@@ -3,6 +3,9 @@ import { getQuestions } from '../../lib/api';
 export const SET_PLAYER_VALUES = 'SET_PLAYER_VALUES';
 export const setPlayerValues = (payload) => ({ type: SET_PLAYER_VALUES, payload });
 
+export const SET_SCORE_VALUE = 'SET_SCORE_VALUE';
+export const setScoreValue = (payload) => ({ type: SET_SCORE_VALUE, payload });
+
 export const SET_QUESTIONS = 'SET_QUESTIONS';
 const requestGame = (payload) => ({ type: SET_QUESTIONS, payload });
 export const requestQuestions = (navigate) => async (dispatch) => {
