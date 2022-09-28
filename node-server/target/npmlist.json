@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "name": "server",
+  "dependencies": {
+    "cors": {
+      "version": "2.8.5",
+      "resolved": "https://registry.npmjs.org/cors/-/cors-2.8.5.tgz"
+    },
+    "express-async-errors": {
+      "version": "3.1.1",
+      "resolved": "https://registry.npmjs.org/express-async-errors/-/express-async-errors-3.1.1.tgz"
+    },
+    "express": {
+      "version": "4.17.1",
+      "resolved": "https://registry.npmjs.org/express/-/express-4.17.1.tgz"
+    },
+    "mongoose": {
+      "version": "6.1.8",
+      "resolved": "https://registry.npmjs.org/mongoose/-/mongoose-6.1.8.tgz"
+    },
+    "zod": {
+      "version": "3.11.6",
+      "resolved": "https://registry.npmjs.org/zod/-/zod-3.11.6.tgz"
+    }
+  }
+}
