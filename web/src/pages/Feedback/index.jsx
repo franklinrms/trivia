@@ -16,7 +16,8 @@ export default function Feedback() {
 
   useEffect(() => {
     const updateRating = async () => {
-      await postRanking({ score, gravatarEmail, name });
+      const picture = getGravatar(gravatarEmail);
+      await postRanking({ score, picture, name });
     };
     updateRating();
   }, []);
@@ -30,7 +31,6 @@ export default function Feedback() {
         <h3>{`You got ${assertions} questions right!`}</h3>
         <h3>{`Totaling ${score} points`}</h3>
         <span>
-
           <Button type="button" onClick={() => navigate('/')}>
             Play Again
           </Button>

@@ -29,7 +29,7 @@ export const postRanking = async (player) => {
   try {
     const { data } = await axios({
       method: 'post',
-      url: 'https://trivia-server.fly.dev/ranking',
+      url: process.env.REACT_APP_NODE_SERVER_URL,
       data: player,
     });
     return data;
