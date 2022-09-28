@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import AlternativeButton from '../AlternativeButton';
@@ -13,10 +13,21 @@ export default function Alternatives({
   difficulty,
   selected,
 }) {
+  const [answers, setAnswers] = useState([]);
   const dispatch = useDispatch();
   const prevScore = useSelector((state) => state.player.score);
 
-  const answers = [...incorrectAnswers, correctAnswer];
+  useEffect(() => {
+    const arr = [...incorrectAnswers, correctAnswer];
+    const shuffleArray = () => {
+      for (let index = arr.length - 1; index > 0; index -= 1) {
+        const random = Math.floor(Math.random() * (index + 1));
+        [arr[index], arr[random]] = [arr[random], arr[index]];
+      }
+      setAnswers(arr);
+    };
+    shuffleArray();
+  }, [correctAnswer]);
 
   const selectAlternative = ({ target }) => {
     if (target.value === correctAnswer) {
@@ -45,11 +56,6 @@ Alternatives.propTypes = {
   incorrect_answers: PropTypes.arrayOf(PropTypes.string),
   correct_answer: PropTypes.string,
   difficulty: PropTypes.string,
-  isDisabled: PropTypes.bool.isRequired,
-  selected: PropTypes.func.isRequired,
-};
-Alternatives.defaultProps = {
-  incorrect_answers: [],
-  correct_answer: '',
-  difficulty: '',
-};
+  isDisabled: PropTypes.bool,
+  selected: PropTypes.func,
+}.isRequired;
