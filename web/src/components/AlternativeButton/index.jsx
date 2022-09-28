@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import sanitizeHtml from 'sanitize-html';
 import Alternative from './style';
 import bg from '../../assets/bg.png';
 
 export default function AlternativeButton({
   label, onClick, disabled, isCorrect,
 }) {
+  const cleanAlternative = sanitizeHtml(label);
   return (
     <Alternative
       bg={bg}
@@ -15,9 +17,8 @@ export default function AlternativeButton({
       value={label}
       selected={disabled}
       isCorrect={isCorrect}
-    >
-      {label}
-    </Alternative>
+      dangerouslySetInnerHTML={{ __html: cleanAlternative }}
+    />
   );
 }
 AlternativeButton.propTypes = {

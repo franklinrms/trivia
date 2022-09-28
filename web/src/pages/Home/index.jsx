@@ -63,10 +63,10 @@ export default function Home() {
 
         <PlayButton type="submit">Play</PlayButton>
         <span>
-          <Buttons type="button" onClick={() => navigate('/settings')}>
+          {/* <Buttons type="button" onClick={() => navigate('/')}>
             <i className="bx bx-cog bx-tada-hover" />
             Settings
-          </Buttons>
+          </Buttons> */}
           <Buttons type="button" onClick={() => navigate('/ranking')}>
             <i className="bx bx-trophy bx-tada-hover" />
             Ranking
