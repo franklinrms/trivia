@@ -60,6 +60,7 @@ export const PlayButton = styled.button`
     border: 4px solid ${theme.colors.brand};
     border-radius: 20px;
     background: ${theme.colors.brand};
+    color: ${theme.colors.text_on_brand_color};
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
@@ -83,6 +84,9 @@ export const PlayButton = styled.button`
     &:hover::after {
         left: 0;
         width: 100%;
+    }
+    &:hover {
+        color: ${theme.colors.brand};
     }
     &:active{
         top: 2px;

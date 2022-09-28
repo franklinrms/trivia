@@ -13,7 +13,7 @@ const Alternative = styled.button`
     width: 48%;
 
     ${(props) => props.selected && `
-        border: 4px solid ${props.isCorrect ? theme.colors.brand : theme.colors.brand_secondary};
+        border: 5px solid ${props.isCorrect ? theme.colors.brand : theme.colors.brand_secondary};
     `}
 
     &:hover {
