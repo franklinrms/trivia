@@ -7,6 +7,7 @@ Acessar a página referente ao jogo, onde se deverá escolher uma das respostas 
 Ser redirecionada, após 5 perguntas respondidas, para a tela de score, onde o texto mostrado depende do número de acertos.
 Visualizar a página de ranking, se quiser, ao final de cada jogo.
 
+Você pode acessar a aplicação em <a href="www.trivia-game.cf/">trivia-game.cf</a>
 
 ## Técnologias usadas
 
