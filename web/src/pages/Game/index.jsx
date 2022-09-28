@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Alternatives from '../../components/Alternatives';
 import Header from '../../components/Header';
 import Question from '../../components/Question';
 import { requestQuestions } from '../../reduce/actions';
@@ -29,6 +30,10 @@ export default function Game() {
         category={currentQuestion?.category}
         question={currentQuestion?.question}
       />
+      {
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        <Alternatives {...currentQuestion} isDisabled={false} />
+      }
 
       <button type="button" onClick={nextQuestion}>next</button>
     </div>

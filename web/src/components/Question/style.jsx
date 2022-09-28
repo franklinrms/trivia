@@ -5,7 +5,6 @@ const Container = styled.div`
     border-radius: 20px;   
     padding: 40px;
     width: 60%;
-    /* height: 300px; */
     background-color: ${theme.colors.surface_primary};
     background-image: url(${({ bg }) => bg});
     display: flex;
@@ -13,6 +12,7 @@ const Container = styled.div`
     align-items: center;
     box-shadow: 2px 2px 10px 0px ${theme.colors.stroke};
     margin: 0 auto;
+    margin-top: 40px;
 
     h2 {
         font-size: 40px;
