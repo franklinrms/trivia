@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Feedback from './pages/Feedback';
 import Game from './pages/Game';
 import Home from './pages/Home';
+import Ranking from './pages/Ranking';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/game" element={<Game />} />
       <Route path="/feedback" element={<Feedback />} />
+      <Route path="/ranking" element={<Ranking />} />
     </Routes>
   );
 }

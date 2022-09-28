@@ -37,3 +37,15 @@ export const postRanking = async (player) => {
     return error;
   }
 };
+
+export const getRanking = async () => {
+  try {
+    const { data } = await axios({
+      method: 'get',
+      url: process.env.REACT_APP_NODE_SERVER_URL,
+    });
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
