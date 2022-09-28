@@ -24,3 +24,16 @@ export const getQuestions = async (token, difficulty) => {
     return error;
   }
 };
+
+export const postRanking = async (player) => {
+  try {
+    const { data } = await axios({
+      method: 'post',
+      url: 'https://trivia-server.fly.dev/ranking',
+      data: player,
+    });
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
