@@ -6,6 +6,8 @@ import Alternatives from '../../components/Alternatives';
 import Header from '../../components/Header';
 import Question from '../../components/Question';
 import Timer from '../../components/Timer';
+import { postRanking } from '../../lib/api';
+import getGravatar from '../../lib/getGravatar';
 import { requestQuestions } from '../../reduce/actions';
 import NextButton from './style';
 
@@ -19,14 +21,21 @@ export default function Game() {
     dispatch(requestQuestions(navigate));
   }, []);
 
+  const { score, gravatarEmail, name } = useSelector((state) => state.player);
   const questions = useSelector((state) => state.game) || [];
   const currentQuestion = questions[indexQuestion];
 
-  const nextQuestion = () => {
+  const updateRating = async () => {
+    const picture = getGravatar(gravatarEmail);
+    await postRanking({ score, picture, name });
+  };
+
+  const nextQuestion = async () => {
     const MAX_QUESTIONS = 3;
     if (indexQuestion <= MAX_QUESTIONS) {
       setIndexQuestion(indexQuestion + 1);
     } else {
+      await updateRating();
       navigate('/feedback');
     }
     setHasClick(false);

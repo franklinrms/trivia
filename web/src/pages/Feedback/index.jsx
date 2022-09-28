@@ -1,26 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import getGravatar from '../../lib/getGravatar';
 import bg from '../../assets/bg.png';
 import Container, { Button } from './style';
-import { postRanking } from '../../lib/api';
 
 export default function Feedback() {
-  const {
-    assertions, score, gravatarEmail, name,
-  } = useSelector((state) => state.player);
+  const { assertions, score, gravatarEmail } = useSelector((state) => state.player);
 
   const MIN_ASSERTIONS = 3;
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const updateRating = async () => {
-      const picture = getGravatar(gravatarEmail);
-      await postRanking({ score, picture, name });
-    };
-    updateRating();
-  }, []);
 
   return (
     <Container minAssertions={assertions < MIN_ASSERTIONS} bg={bg}>
