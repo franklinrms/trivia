@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Alternatives from '../../components/Alternatives';
 import Header from '../../components/Header';
 import Question from '../../components/Question';
+import Timer from '../../components/Timer';
 import { requestQuestions } from '../../reduce/actions';
 
 export default function Game() {
@@ -34,6 +35,7 @@ export default function Game() {
         // eslint-disable-next-line react/jsx-props-no-spreading
         <Alternatives {...currentQuestion} isDisabled={false} />
       }
+      <Timer timeout={() => {}} />
 
       <button type="button" onClick={nextQuestion}>next</button>
     </div>
